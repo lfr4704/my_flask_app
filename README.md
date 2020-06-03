@@ -12,9 +12,9 @@ pipenv install Flask Flask-SQLAlchemy Flask-Migrate
 
 ```python
 # Mac:
-FLASK_APP=hello.py flask run
+FLASK_APP=web_app flask run
 
 # Windows:
-export FLASK_APP=hello.py # one-time thing, to set the env var
+export FLASK_APP=web_app # one-time thing, to set the env var
 flask run
 ```

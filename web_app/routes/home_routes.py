@@ -1,16 +1,16 @@
-# hello.py
+# web_app/routes/home_routes.py
 
-from flask import Flask
+from flask import Blueprint
 
-app = Flask(__name__)
+home_routes = Blueprint("home_routes", __name__)
 
-@app.route("/")
+@home_routes.route("/")
 def index():
     x = 2 + 2
     print("visiting the home page")
     return f"Hello World! {x}"
 
-@app.route("/about")
+@home_routes.route("/about")
 def about():
     print("visiting the about page")
     return "About me"
