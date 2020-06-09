@@ -6,7 +6,7 @@ import pickle
 from sklearn.datasets import load_iris
 from sklearn.linear_model import LogisticRegression # for example
 
-MODEL_FILEPATH = os.path.join(os.path.dirname(__file__), "..", "stat_models", "latest_model.pkl")
+MODEL_FILEPATH = os.path.join(os.path.dirname(__file__), "..", "stats_models", "latest_model.pkl")
 
 def train_and_save_model():
     print("TRAINING THE MODEL...")
@@ -29,6 +29,24 @@ def load_model():
     return saved_model
 
 if __name__ == "__main__":
+
+    # LIVE-TRAINING IN REAL TIME APPROACH
+
+    X, y = load_iris(return_X_y=True)
+    #print(type(X), X.shape) #> <class 'numpy.ndarray'> (150, 4)
+    #print(type(y), y.shape) #> <class 'numpy.ndarray'> (150,)
+    classifier = LogisticRegression() # for example
+    classifier.fit(X, y)
+
+    X, y = load_iris(return_X_y=True) # just to have some data to use when predicting
+    inputs = X[:2, :]
+    print(type(inputs), inputs)
+
+    result = clf.predict(inputs)
+    print("RESULT:", result)
+
+
+    # PRE-TRAIN AND LOAD SAVED MODEL APPROACH
 
     train_and_save_model()
 
