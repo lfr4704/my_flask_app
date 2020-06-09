@@ -12,6 +12,14 @@ pipenv --python 3.7
 pipenv install Flask Flask-SQLAlchemy Flask-Migrate
 ```
 
+```sh
+pipenv install python-dotenv requests basilica tweepy
+```
+
+```sh
+pipenv install scikit-learn
+```
+
 Migrate the database:
 
 ```sh
