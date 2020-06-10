@@ -24,16 +24,16 @@ print("API CLIENT", type(api))
 
 if __name__ == "__main__":
 
-    user = api.get_user("s2t2")
+    user = api.get_user("elonmusk")
     print(type(user)) #> <class 'tweepy.models.User'>
-    pprint(user._json)
+    print(user._json)
     print(user.id)
     print(user.screen_name)
     print(user.name)
     print(user.followers_count)
 
     #tweets = api.user_timeline("s2t2", tweet_mode="extended", count=150, exclude_replies=True, include_rts=False)
-    tweets = api.user_timeline("s2t2", tweet_mode="extended", count=150)
+    tweets = api.user_timeline("elonmusk", tweet_mode="extended", count=150)
     print(type(tweets)) #> <class 'tweepy.models.ResultSet'>
 
     for tweet in tweets:
