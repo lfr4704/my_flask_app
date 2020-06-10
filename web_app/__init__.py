@@ -9,10 +9,11 @@ from web_app.routes.twitter_routes import twitter_routes
 from web_app.routes.stats_routes import stats_routes
 
 DATABASE_URI = "sqlite:///web_app_development.db" # using relative filepath
-#DATABASE_URI = "sqlite:////Users/Username/Desktop/your-repo-name/web_app_99.db" # using absolute filepath on Mac (recommended)
+SECRET_KEY = "temporary secret value. todo read from env var and customize on production to keep sessions secure"
 
 def create_app():
     app = Flask(__name__)
+    app.config["SECRET_KEY"] = SECRET_KEY
 
     app.config["SQLALCHEMY_DATABASE_URI"] = DATABASE_URI
     db.init_app(app)
@@ -22,6 +23,7 @@ def create_app():
     app.register_blueprint(book_routes)
     app.register_blueprint(twitter_routes)
     app.register_blueprint(stats_routes)
+
     return app
 
 if __name__ == "__main__":

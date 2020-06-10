@@ -1,10 +1,8 @@
-<!DOCTYPE html>
-<html lang="en" dir="ltr">
-  <head>
-    <meta charset="utf-8">
-    <title>New Book</title>
-  </head>
-  <body>
+
+{% extends "bootstrap_layout.html" %}
+{% set active_page = "new_book" %}
+
+{% block content %}
 
     <h1>New Book Page</h1>
 
@@ -25,5 +23,4 @@
         <button>Submit</button>
     </form>
 
-  </body>
-</html>
+{% endblock %}
