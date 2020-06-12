@@ -33,3 +33,14 @@ FLASK_APP=web_app flask db upgrade
 ```sh
 FLASK_APP=web_app flask run
 ```
+
+# deploying to Herok
+
+```sh
+heroku login
+heroku create <name_of_app>
+```
+
+```sh
+pipenv install gunicorn psycopg2-binary
+```
