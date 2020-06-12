@@ -1,6 +1,8 @@
 # web_app/__init__.py
 
+import os
 from flask import Flask
+from dotenv import load_dotenv
 
 from web_app.models import db, migrate
 from web_app.routes.home_routes import home_routes
@@ -8,7 +10,9 @@ from web_app.routes.book_routes import book_routes
 from web_app.routes.twitter_routes import twitter_routes
 from web_app.routes.stats_routes import stats_routes
 
-DATABASE_URI = "sqlite:///web_app_development.db" # using relative filepath
+load_dotenv() #loads env vars from the .env file (locally)
+
+DATABASE_URI = os.getenv("DATABASE_URL") # using relative filepath
 SECRET_KEY = "temporary secret value. todo read from env var and customize on production to keep sessions secure"
 
 def create_app():
